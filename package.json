@@ -1,0 +1,20 @@
+{
+  "name": "furnitureshop",
+  "description": "Reference application built according to the CAP model",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "2.x"
+  },
+  "scripts": {
+    "build": "cds build --clean"
+  },
+  "cds": {
+    "data": {
+      "model": "db/"
+    },
+    "service": {
+      "model": "srv/"
+    }
+  },
+  "private": true
+}

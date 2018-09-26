@@ -1,0 +1,36 @@
+{
+	"format_version": 1,
+	"imports": [
+		{
+			"target_table": "COM_COMPANY_FURNITURESHOP_WISHLIST",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Wishlist.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"PRODUCTID",
+					"CATEGORYNAME",
+					"PRODUCTNAME",
+					"PRODUCTDESC",
+					"PRODUCTCOLOR",
+					"PRODUCTWIDTH",
+					"PRODUCTHEIGHT",
+					"PRODUCTDEPTH",
+					"PRODUCTWEIGHT",
+					"PRODUCTPRICE",
+					"PRODUCTWARRANTY",
+					"MATERIALTYPE",
+					"SUPPLIERID",
+					"SUPPLIERNAME",
+					"SUPPLIERLOCATION",
+					"PICTUREURL",
+					"PRODUCTRATING"
+				]
+			}
+		}
+			
+	]
+	
+}

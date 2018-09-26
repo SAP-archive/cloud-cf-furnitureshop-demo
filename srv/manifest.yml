@@ -1,0 +1,8 @@
+---
+applications:
+  - name: furnitureshop-srv
+    memory: 512M
+    buildpack: sap_java_buildpack
+    path: target/furnitureshop-srv-1.0-SNAPSHOT.war  
+    services:
+    - furnitureshop

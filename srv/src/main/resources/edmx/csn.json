@@ -1,0 +1,225 @@
+{
+  "definitions": {
+    "CatalogService": {
+      "kind": "service",
+      "@source": "srv/my-service.cds"
+    },
+    "CatalogService.Wishlist": {
+      "kind": "entity",
+      "@read": true,
+      "@update": true,
+      "source": "com.company.furnitureshop.Wishlist",
+      "elements": {
+        "ProductID": {
+          "value": {
+            "=": "Wishlist.ProductID"
+          },
+          "key": true,
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTID"
+        },
+        "categoryName": {
+          "value": {
+            "=": "Wishlist.categoryName"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "CATEGORYNAME"
+        },
+        "productName": {
+          "value": {
+            "=": "Wishlist.productName"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTNAME"
+        },
+        "productDesc": {
+          "value": {
+            "=": "Wishlist.productDesc"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTDESC"
+        },
+        "productColor": {
+          "value": {
+            "=": "Wishlist.productColor"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTCOLOR"
+        },
+        "productWidth": {
+          "value": {
+            "=": "Wishlist.productWidth"
+          },
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTWIDTH"
+        },
+        "productHeight": {
+          "value": {
+            "=": "Wishlist.productHeight"
+          },
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTHEIGHT"
+        },
+        "productDepth": {
+          "value": {
+            "=": "Wishlist.productDepth"
+          },
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTDEPTH"
+        },
+        "productWeight": {
+          "value": {
+            "=": "Wishlist.productWeight"
+          },
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTWEIGHT"
+        },
+        "productPrice": {
+          "value": {
+            "=": "Wishlist.productPrice"
+          },
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2,
+          "@cds.persistence.name": "PRODUCTPRICE"
+        },
+        "productWarranty": {
+          "value": {
+            "=": "Wishlist.productWarranty"
+          },
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTWARRANTY"
+        },
+        "materialType": {
+          "value": {
+            "=": "Wishlist.materialType"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "MATERIALTYPE"
+        },
+        "supplierID": {
+          "value": {
+            "=": "Wishlist.supplierID"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERID"
+        },
+        "supplierName": {
+          "value": {
+            "=": "Wishlist.supplierName"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERNAME"
+        },
+        "supplierLocation": {
+          "value": {
+            "=": "Wishlist.supplierLocation"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERLOCATION"
+        },
+        "pictureURL": {
+          "value": {
+            "=": "Wishlist.pictureURL"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "PICTUREURL"
+        },
+        "productRating": {
+          "value": {
+            "=": "Wishlist.productRating"
+          },
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 2,
+          "@cds.persistence.name": "PRODUCTRATING"
+        }
+      },
+      "@cds.persistence.name": "CATALOGSERVICE_WISHLIST"
+    },
+    "com.company.furnitureshop.Wishlist": {
+      "kind": "entity",
+      "elements": {
+        "ProductID": {
+          "key": true,
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTID"
+        },
+        "categoryName": {
+          "type": "cds.String",
+          "@cds.persistence.name": "CATEGORYNAME"
+        },
+        "productName": {
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTNAME"
+        },
+        "productDesc": {
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTDESC"
+        },
+        "productColor": {
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTCOLOR"
+        },
+        "productWidth": {
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTWIDTH"
+        },
+        "productHeight": {
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTHEIGHT"
+        },
+        "productDepth": {
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTDEPTH"
+        },
+        "productWeight": {
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTWEIGHT"
+        },
+        "productPrice": {
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2,
+          "@cds.persistence.name": "PRODUCTPRICE"
+        },
+        "productWarranty": {
+          "type": "cds.Integer",
+          "@cds.persistence.name": "PRODUCTWARRANTY"
+        },
+        "materialType": {
+          "type": "cds.String",
+          "@cds.persistence.name": "MATERIALTYPE"
+        },
+        "supplierID": {
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERID"
+        },
+        "supplierName": {
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERNAME"
+        },
+        "supplierLocation": {
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERLOCATION"
+        },
+        "pictureURL": {
+          "type": "cds.String",
+          "@cds.persistence.name": "PICTUREURL"
+        },
+        "productRating": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 2,
+          "@cds.persistence.name": "PRODUCTRATING"
+        }
+      },
+      "@cds.persistence.name": "COM_COMPANY_FURNITURESHOP_WISHLIST"
+    }
+  },
+  "version": {
+    "creator": "CDS Compiler v1.1.2",
+    "csn": "0.1.0"
+  },
+  "@sql_mapping": "plain"
+}
