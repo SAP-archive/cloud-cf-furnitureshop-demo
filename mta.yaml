@@ -10,37 +10,29 @@ modules:
       disk-quota: 256M
     requires:
       - name: furnitureshop-hdi-container
-      
-      
   - name: srv
     type: java
     path: srv
     parameters:
-      memory: 512M
+      memory: 1024M
       disk-quota: 256M
-    requires:
-      - name: furnitureshop-logging
-      - name: connectivity
-      - name: destination
-      - name: uaa_furnitureshop
-      - name: furnitureshop-hdi-container
-        properties:
-          SET_LOGGING_LEVEL: '{com.company.furnitureshop: INFO}'
-          ALLOW_MOCKED_AUTH_HEADER: true
-          JBP_CONFIG_RESOURCE_CONFIGURATION: >-
-            [tomcat/webapps/ROOT/META-INF/context.xml:
-            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]
     provides:
       - name: srv_api
         properties:
           url: '${default-url}'
+    requires:
+      - name: furnitureshop-hdi-container
+        properties:
+          JBP_CONFIG_RESOURCE_CONFIGURATION: >-
+            [tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]
 
   - name: ui
     type: html5
     path: ui
     parameters:
-       disk-quota: 256M
-       memory: 256M
+       disk-quota: 512M
+       memory: 512M
     build-parameters:
        builder: grunt
     requires:
@@ -58,19 +50,6 @@ resources:
     properties:
       hdi-container-name: '${service-name}'
     type: com.sap.xs.hdi-container
-  - name: furnitureshop-logging
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: application-logs
-      service-plan: lite
-
-  - name: destination
-    type: org.cloudfoundry.existing-service
-
-  - name: connectivity
-    type: connectivity
-    parameters:
-      service-plan: lite
 
   - name: uaa_furnitureshop
     parameters:

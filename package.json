@@ -6,7 +6,8 @@
     "@sap/cds": "2.x"
   },
   "scripts": {
-    "build": "cds build --clean"
+    "build": "cds build --clean",
+    "watch": "nodemon -w . -i node_modules/**,.git/** -e cds -x npm run build"
   },
   "cds": {
     "data": {

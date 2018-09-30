@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="CatalogService" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Wishlist" EntityType="CatalogService.Wishlist"/>
+			</EntityContainer>
+			<EntityType Name="Wishlist">
+				<Key>
+					<PropertyRef Name="ProductID"/>
+				</Key>
+				<Property Name="ProductID" Type="Edm.String" Nullable="false"/>
+				<Property Name="categoryName" Type="Edm.String"/>
+				<Property Name="productName" Type="Edm.String"/>
+				<Property Name="productDesc" Type="Edm.String"/>
+				<Property Name="productColor" Type="Edm.String"/>
+				<Property Name="productWidth" Type="Edm.Int32"/>
+				<Property Name="productHeight" Type="Edm.Int32"/>
+				<Property Name="productDepth" Type="Edm.Int32"/>
+				<Property Name="productWeight" Type="Edm.Int32"/>
+				<Property Name="productPrice" Type="Edm.Decimal" Scale="2" Precision="10"/>
+				<Property Name="productWarranty" Type="Edm.Int32"/>
+				<Property Name="materialType" Type="Edm.String"/>
+				<Property Name="supplierID" Type="Edm.String"/>
+				<Property Name="supplierName" Type="Edm.String"/>
+				<Property Name="supplierLocation" Type="Edm.String"/>
+				<Property Name="pictureURL" Type="Edm.String"/>
+				<Property Name="productRating" Type="Edm.Decimal" Scale="2" Precision="3"/>
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
