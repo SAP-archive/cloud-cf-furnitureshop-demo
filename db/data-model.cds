@@ -19,3 +19,14 @@ entity Wishlist {
   pictureURL : String;
   productRating : Decimal(3,2);
 }
+
+entity BackEndProductData
+{
+	key ProductID : String;
+	SUPPLIERID : String;
+	SUPPLIERNAME : String;
+	PRICE : String;
+	STOCK : String;
+	DELIVERYDATE : String;
+	DISCOUNT : String;
+}

@@ -137,6 +137,64 @@
       },
       "@cds.persistence.name": "CATALOGSERVICE_WISHLIST"
     },
+    "CatalogService.BackEndProductData": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "source": "com.company.furnitureshop.BackEndProductData",
+      "elements": {
+        "ProductID": {
+          "value": {
+            "=": "BackEndProductData.ProductID"
+          },
+          "key": true,
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTID"
+        },
+        "SUPPLIERID": {
+          "value": {
+            "=": "BackEndProductData.SUPPLIERID"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERID"
+        },
+        "SUPPLIERNAME": {
+          "value": {
+            "=": "BackEndProductData.SUPPLIERNAME"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERNAME"
+        },
+        "PRICE": {
+          "value": {
+            "=": "BackEndProductData.PRICE"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "PRICE"
+        },
+        "STOCK": {
+          "value": {
+            "=": "BackEndProductData.STOCK"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "STOCK"
+        },
+        "DELIVERYDATE": {
+          "value": {
+            "=": "BackEndProductData.DELIVERYDATE"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "DELIVERYDATE"
+        },
+        "DISCOUNT": {
+          "value": {
+            "=": "BackEndProductData.DISCOUNT"
+          },
+          "type": "cds.String",
+          "@cds.persistence.name": "DISCOUNT"
+        }
+      },
+      "@cds.persistence.name": "CATALOGSERVICE_BACKENDPRODUCTDATA"
+    },
     "com.company.furnitureshop.Wishlist": {
       "kind": "entity",
       "elements": {
@@ -215,6 +273,41 @@
         }
       },
       "@cds.persistence.name": "COM_COMPANY_FURNITURESHOP_WISHLIST"
+    },
+    "com.company.furnitureshop.BackEndProductData": {
+      "kind": "entity",
+      "elements": {
+        "ProductID": {
+          "key": true,
+          "type": "cds.String",
+          "@cds.persistence.name": "PRODUCTID"
+        },
+        "SUPPLIERID": {
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERID"
+        },
+        "SUPPLIERNAME": {
+          "type": "cds.String",
+          "@cds.persistence.name": "SUPPLIERNAME"
+        },
+        "PRICE": {
+          "type": "cds.String",
+          "@cds.persistence.name": "PRICE"
+        },
+        "STOCK": {
+          "type": "cds.String",
+          "@cds.persistence.name": "STOCK"
+        },
+        "DELIVERYDATE": {
+          "type": "cds.String",
+          "@cds.persistence.name": "DELIVERYDATE"
+        },
+        "DISCOUNT": {
+          "type": "cds.String",
+          "@cds.persistence.name": "DISCOUNT"
+        }
+      },
+      "@cds.persistence.name": "COM_COMPANY_FURNITURESHOP_BACKENDPRODUCTDATA"
     }
   },
   "version": {

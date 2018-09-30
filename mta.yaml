@@ -22,7 +22,12 @@ modules:
           url: '${default-url}'
     requires:
       - name: furnitureshop-hdi-container
+      - name: uaa_furnitureshop
+      - name: connectivity
+      - name: destination
         properties:
+          SET_LOGGING_LEVEL: '{com.company.furnitureshop: INFO}'
+          ALLOW_MOCKED_AUTH_HEADER: true
           JBP_CONFIG_RESOURCE_CONFIGURATION: >-
             [tomcat/webapps/ROOT/META-INF/context.xml:
             {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]
@@ -56,5 +61,18 @@ resources:
        path: ./xs-security.json
        service-plan: application
        service: xsuaa
+       shared: true
     type: org.cloudfoundry.managed-service
+    
+  - name: destination
+    type: destination
+    parameters:
+      service-plan: lite
+      shared: true
+      
+  - name: connectivity
+    type: connectivity
+    parameters:
+      service-plan: lite
+      shared: true
 

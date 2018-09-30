@@ -1,76 +1,69 @@
-<mvc:View
-	controllerName="com.company.wishlist.ui.controller.Detail"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.m.semantic"
-	xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:vk="sap.ui.vk">
-
-	<semantic:DetailPage
-		id="page"
-		navButtonPress="onNavBack"
-		showNavButton="{device>/system/phone}"
-		title="{i18n>detailTitle}"
-		busy="{detailView>/busy}"
-		busyIndicatorDelay="{detailView>/delay}">
-
+<mvc:View controllerName="com.company.wishlist.ui.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:vk="sap.ui.vk">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}"
+		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
 		<semantic:content>
-			<ObjectHeader
-				id="objectHeader" icon="img/ico_{pictureURL}"
-				iconDensityAware="false" iconAlt="{productName}"
-				title="{productName}" intro="{ProductID}"
-				number="{path: 'productPrice', formatter: '.formatter.currencyValue'}"
-				numberState="Success" numberUnit="USD">
-				<attributes> <ObjectAttribute text="{productDesc}"/> </attributes>
+			<ObjectHeader id="objectHeader" icon="img/ico_{pictureURL}" iconDensityAware="false" iconAlt="{productName}" title="{productName}"
+				intro="{ProductID}" number="{path: 'productPrice', formatter: '.formatter.currencyValue'}" numberState="Success" numberUnit="USD">
+				<attributes>
+					<ObjectAttribute text="{productDesc}"/>
+				</attributes>
 			</ObjectHeader>
-			<IconTabBar
-				id="iconTabBar"
-				class="sapUiResponsiveContentPadding">
+			<!-- Display Average Product Rating -->
+			<Bar>
+				<contentRight>
+					<Label text="Average Product Rating "/>
+					<RatingIndicator maxValue="5" id="prodrating" class="sapUiSmallMarginBottom" editable="false" value=""/>
+					<Label text=" ({productRating})"/>
+				</contentRight>
+			</Bar>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onIconTabSelectBK">
 				<items>
-				<IconTabFilter
-				id="iconTabBarFilter1" icon="sap-icon://hint"
-				tooltip="{i18n>detailIconTabBarInfo}">
-				<VBox class="sapUiSmallMargin">			<f:SimpleForm id="SimpleFormDisplay471"
-				minWidth="1024" maxContainerCols="2"
-				editable="false" layout="ResponsiveGridLayout"
-				title="Product Details" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="1" columnsM="1"><f:content>
-				<Label text="Product ID" /><Text text="{ProductID}" />
-				<Label text="Product Name" /><Text text="{productName}" />
-				<Label text="Category" /><Text text="{categoryName}" />
-				<Label text="Color" /><Text text="{productColor}" />
-				<Label text="Width" /><Text text="{productWidth}" />
-				<Label text="Height" /><Text text="{productHeight}" />
-				<Label text="Depth" /><Text text="{productDepth}" />
-				<Label text="Weight" /><Text text="{productWeight}" />
-				<Label text="Warranty" /><Text text="{productWarranty}" />
-				<Label text="Material Type" /><Text text="{materialType}" />
-				<Label text="Supplier" /><Text text="{supplierName}" />
-				<Label text="Supplier Location" /><Text text="{supplierLocation}" />
-				</f:content>
-				</f:SimpleForm>
-				</VBox>
-				</IconTabFilter>
-				<IconTabFilter id="iconTabBarFilter2"
-					icon="sap-icon://picture" tooltip="{i18n>detailIconTabBarAttachments}">
-					<Image src="img/{pictureURL}"
-					densityAware="false">
-					<layoutData>
-					<FlexItemData growFactor="1" />
-					</layoutData>
-					</Image>
-				</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}">
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="SimpleFormDisplay471" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"
+								title="Product Details" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="1" columnsM="1">
+								<f:content>
+									<Label text="Product ID"/><Text text="{ProductID}"/>
+									<Label text="Product Name"/><Text text="{productName}"/>
+									<Label text="Category"/><Text text="{categoryName}"/>
+									<Label text="Color"/><Text text="{productColor}"/>
+									<Label text="Width"/><Text text="{productWidth}"/>
+									<Label text="Height"/><Text text="{productHeight}"/>
+									<Label text="Depth"/><Text text="{productDepth}"/>
+									<Label text="Weight"/><Text text="{productWeight}"/>
+									<Label text="Warranty"/><Text text="{productWarranty}"/>
+									<Label text="Material Type"/><Text text="{materialType}"/>
+									<Label text="Supplier"/><Text text="{supplierName}"/>
+									<Label text="Supplier Location"/><Text text="{supplierLocation}"/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://picture" tooltip="{i18n>detailIconTabBarAttachments}">
+						<Image src="img/{pictureURL}" densityAware="false">
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+						</Image>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://factory" tooltip="{i18n>detailIconTabBarAttachments}">
+						<l:VerticalLayout class="sapUiContentPadding" width="50%">
+							<l:content>
+								<List id="backendlist" headerText="On-Premise Data">
+									<DisplayListItem label="Product ID" value="{ProductID}"/>
+									<DisplayListItem label="Stock" value="{STOCK}"/>
+									<DisplayListItem label="Discount" value="{DISCOUNT}"/>
+									<DisplayListItem label="Delivery Date" value="{DELIVERYDATE}"/>
+								</List>
+							</l:content>
+						</l:VerticalLayout>
+					</IconTabFilter>
 				</items>
 			</IconTabBar>
-
 		</semantic:content>
-
 		<semantic:sendEmailAction>
-			<semantic:SendEmailAction
-				id="shareEmail"
-				press="onShareEmailPress"/>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
-
 	</semantic:DetailPage>
-
 </mvc:View>
