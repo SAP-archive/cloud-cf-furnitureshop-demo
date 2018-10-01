@@ -3,7 +3,6 @@ package com.company.furnitureshop;
 import com.sap.cloud.sdk.result.ElementName;
 import com.sap.cloud.sdk.service.prov.api.annotations.Key;
 
-
 public class BackEndProductEntity {
 	@ElementName("ProductID")
 	@Key
@@ -27,10 +26,10 @@ public class BackEndProductEntity {
 	@ElementName("DISCOUNT")
 	private String DISCOUNT;
 
-
 	public String getPRODUCTID() {
 		return ProductID;
 	}
+
 	public void setPRODUCTID(String PRODUCTID) {
 		this.ProductID = PRODUCTID;
 	}
@@ -38,6 +37,7 @@ public class BackEndProductEntity {
 	public String getSUPPLIERID() {
 		return SUPPLIERID;
 	}
+
 	public void setSUPPLIERID(String SUPPLIERID) {
 		this.SUPPLIERID = SUPPLIERID;
 	}
@@ -45,6 +45,7 @@ public class BackEndProductEntity {
 	public String getSUPPLIERNAME() {
 		return SUPPLIERNAME;
 	}
+
 	public void setSUPPLIERNAME(String SUPPLIERNAME) {
 		this.SUPPLIERNAME = SUPPLIERNAME;
 	}
@@ -52,6 +53,7 @@ public class BackEndProductEntity {
 	public String getSTOCK() {
 		return STOCK;
 	}
+
 	public void setSTOCK(String STOCK) {
 		this.STOCK = STOCK;
 	}
@@ -59,6 +61,7 @@ public class BackEndProductEntity {
 	public String getDELIVERYDATE() {
 		return DELIVERYDATE;
 	}
+
 	public void setDELIVERYDATE(String DELIVERYDATE) {
 		this.DELIVERYDATE = DELIVERYDATE;
 	}
@@ -66,6 +69,7 @@ public class BackEndProductEntity {
 	public String getDISCOUNT() {
 		return DISCOUNT;
 	}
+
 	public void setDISCOUNT(String DISCOUNT) {
 		this.DISCOUNT = DISCOUNT;
 	}
