@@ -21,10 +21,10 @@ modules:
         properties:
           url: '${default-url}'
     requires:
-      - name: furnitureshop-hdi-container
       - name: uaa_furnitureshop
       - name: connectivity
       - name: destination
+      - name: furnitureshop-hdi-container
         properties:
           SET_LOGGING_LEVEL: '{com.company.furnitureshop: INFO}'
           ALLOW_MOCKED_AUTH_HEADER: true
